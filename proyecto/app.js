@@ -1,4 +1,4 @@
-let minutos=2;
+let minutos=9;
 let segundos=0;
 cargarSegundo();
 cargarMinutos();

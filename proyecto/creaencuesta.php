@@ -22,19 +22,19 @@ $resultado=mysqli_query($conex,$borrarresp);
 
             <div class="input-container">
                 
-                <input type="text" name="namep" placeholder="Nombre del proyecto">
+                <input type="text" name="namep" placeholder="Nombre del proyecto" required="">
                 <i class="fa-sharp fa-solid fa-pen-to-square fa-beat-fade"></i>   
             </div>
 
             <div class="input-container">
                 
-                <input type="text" name="justificacion" placeholder="Justificacion (max 100 palabras)">  
+                <input type="text" name="justificacion" placeholder="Justificacion (max 100 palabras)" required="">  
                 <i class="fa-sharp fa-regular fa-file fa-beat-fade"></i> 
             </div>
 
             <div class="input-container">
                 
-                <input type="text" name="dinero" placeholder="Dinero requerido">  
+                <input type="text" name="dinero" placeholder="Dinero requerido(numero)" required="" pattern="[0-9]+">  
                 <i class="fa-solid fa-wallet fa-beat-fade"></i>
             </div>
 
@@ -46,7 +46,7 @@ $resultado=mysqli_query($conex,$borrarresp);
 
             <div class="input-container">
                 
-                <input type="text" name="correo" placeholder="Correo de contacto">  
+                <input type="text" name="correo" placeholder="Correo de contacto" required="">  
                 <i class="fa-sharp fa-regular fa-envelope fa-beat-fade"></i>
             </div>
 

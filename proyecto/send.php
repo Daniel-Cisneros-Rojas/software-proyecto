@@ -1,15 +1,26 @@
 <?php
 
  include("conexion.php");
-
+ $error=0;
+ $error2=1;
  if(isset($_POST['send'])) {
+     if(str_word_count($_POST['justificacion'])>100)
+     {
+        $error=1;
+     }
 
+     if(strpos($_POST['correo'],'@gmail.com')!==false)
+     {
+        $error2=0;
+     }
     if(
         strlen($_POST['namep'])>=1&&
         strlen($_POST['justificacion'])>=1&&
         strlen($_POST['dinero'])>=1&&
         strlen($_POST['video'])>=1&&
-        strlen($_POST['correo'])>=1
+        strlen($_POST['correo'])>=1&&
+        str_word_count($_POST['justificacion'])<=100&&
+        $error2==0
     ) {
        $namep=trim($_POST['namep']);
        $justificacion=trim($_POST['justificacion']);
@@ -36,9 +47,25 @@
             <?php
         }
     }else{
-        ?>
-        <h3 class="error">Llena todos los campos</h3>
+        if($error==1)
+        {
+            ?>
+           <h3 class="error">Escribiste mas de 100 palabras en la justificacion</h3>
         <?php
+        }
+        else if($error2==1)
+        {
+            ?>
+            <h3 class="error">Ese correo no es valido</h3>
+            <?php
+        }
+        else
+        {
+            ?>
+            <h3 class="error">Llena todos los campos</h3>
+            <?php
+        }
+        
     }
 
  }

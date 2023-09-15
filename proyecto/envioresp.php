@@ -1,6 +1,7 @@
 <?php
 $inc=include("conexion.php");
 if($inc){
+    $encuestados=0;
     $consulta="SELECT * FROM respuestasf";
     $resultado=mysqli_query($conex,$consulta);
     if($resultado){
@@ -9,6 +10,7 @@ if($inc){
         while($row=$resultado->fetch_array()){
             //$id=$row['id'];
             $resp=$row['respuesta'];
+            $encuestados=$encuestados+1;
             if($resp==1)
             {
               $numsi=$numsi+1;
@@ -55,6 +57,7 @@ if($inc){
     {
         $msg="<br> aceptada";
     }
+    
 
     $mail=@mail($correo,$asunto,$msg,$header);
 }
@@ -75,8 +78,8 @@ if($inc){
         <h2>Respuestas enviadas a su correo</h2>
         <!--<h2><?php echo $numsi;?></h2>
         <h2><?php echo $numno;?></h2>
-        <h2><?php echo $msg;?></h2>-->
-        <h2><?php echo $correo;?></h2>
+        <h2><?php echo $msg;?></h2>
+        <h2><?php echo $correo;?></h2>-->
     </form>
 </body>
 </html>
