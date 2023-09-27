@@ -1,4 +1,4 @@
-let minutos=10;
+let minutos=9;
 let segundos=0;
 cargarSegundo();
 cargarMinutos();
@@ -34,7 +34,7 @@ function cargarMinutos(segundos)
     setTimeout(()=>{
         minutos=59;
     },500)
-    //aqui meter funcion
+    location.href="envioresp.php"
     
     
  }

@@ -1,3 +1,12 @@
+<?php
+$inc=include("conexion.php");
+$consulta= "INSERT INTO respuestas(respuesta)
+                    VALUES('2')";
+
+        $resultado = mysqli_query($conex,$consulta);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

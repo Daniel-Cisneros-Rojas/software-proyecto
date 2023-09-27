@@ -4,7 +4,9 @@ if($inc){
     $consulta="SELECT * FROM datos";
     $resultado=mysqli_query($conex,$consulta);
     if($resultado){
+        $nodatos=0;
         while($row=$resultado->fetch_array()){
+            $nodatos=$nodatos+1;
             $id=$row['id'];
             $nombrep=$row['nombrep'];
             $justificacion=$row['justificacion'];
@@ -46,10 +48,10 @@ if($inc){
 
                    <div class="input-container2">
                     <h3>¿Esta de acuerdo con la peticion?</h3>
-                     <a href="finsi.php" target="_blank">SI</a>
+                     <a href="iniciasesion2.php" target="_blank">SI</a>
                     </div>
                     <div class="input-container3">
-                     <a href="finno.php" target="_blank">NO</a>
+                     <a href="iniciasesion.php" target="_blank">NO</a>
                     </div>
 
                  </div>
@@ -60,6 +62,27 @@ if($inc){
 
             <?php
         }
+
+        if($nodatos==0)
+        {
+            ?>
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Sin datos</title>
+              </head>
+              <body>
+                 <form>
+                    <h2>La encuesta a la que deseas acceder ya termino </h2>
+                 </form>
+              </body>
+              </html>
+            <?php
+
+        }
+
     }
 }
 

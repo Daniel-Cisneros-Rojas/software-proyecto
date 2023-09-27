@@ -1,3 +1,9 @@
+<?php
+$inc=include("conexion.php");
+$borrarresp="DELETE FROM codigos";
+$resultado=mysqli_query($conex,$borrarresp);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
